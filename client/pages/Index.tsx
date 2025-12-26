@@ -322,17 +322,22 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary py-16 md:py-24">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-h2 text-primary-foreground mb-6 font-bold">
+      <section className="bg-gradient-to-r from-primary to-primary py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 right-10 w-40 h-40 bg-accent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-accent rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h2 className="text-h2 text-primary-foreground mb-7 font-black">
             Ready to Secure Your Premises?
           </h2>
-          <p className="text-xl text-primary-foreground mb-8 opacity-95 max-w-2xl mx-auto">
+          <p className="text-2xl text-primary-foreground mb-10 opacity-95 max-w-2xl mx-auto font-semibold">
             Contact us today for a consultation with our security experts
           </p>
           <Link
             to="/contact"
-            className="bg-accent text-accent-foreground px-8 py-4 font-bold text-lg rounded-lg hover:opacity-90 transition-opacity inline-block"
+            className="bg-accent text-accent-foreground px-10 py-5 font-black text-lg rounded-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-block"
           >
             Get in Touch Now
           </Link>
