@@ -12,10 +12,10 @@ import {
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-      {/* Hero Section - Dark Background with Bold Typography */}
-      <section className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden py-24 md:py-40">
-        <div className="absolute inset-0 opacity-15">
+    <div className="bg-background">
+      {/* Hero Section */}
+      <section className="bg-background text-foreground relative overflow-hidden py-24 md:py-40 transition-colors duration-300 animate-fade-in">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-80 h-80 bg-accent rounded-full blur-3xl"></div>
         </div>
 
@@ -26,10 +26,10 @@ export default function Home() {
               <p className="text-sm font-black text-accent mb-6 uppercase tracking-widest">
                 Professional Security Since 1992
               </p>
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-8 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-foreground mb-8 leading-tight">
                 Elite Security Services For Your Peace of Mind
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 font-bold mb-12 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-bold mb-12 leading-relaxed">
                 Drawn from the armed forces of Pakistan, our personnel deliver
                 world-class security with precision, discipline, and unwavering
                 commitment to your safety.
@@ -57,24 +57,24 @@ export default function Home() {
                 alt="Professional security personnel in uniform - Military training"
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview - Color Blocked */}
-      <section className="py-28 md:py-40 bg-gradient-to-b from-slate-900 to-slate-800">
+      {/* Services Overview */}
+      <section className="py-28 md:py-40 bg-background transition-colors duration-300">
         <div className="container mx-auto px-6">
           {/* Section Title with Visual Styling */}
           <div className="mb-16 md:mb-20">
             <div className="flex items-start gap-3 md:gap-4 mb-6 md:mb-8">
               <div className="w-1.5 md:w-2 h-10 md:h-12 bg-accent rounded-full flex-shrink-0 mt-1"></div>
-              <h2 className="text-3xl md:text-6xl font-black text-white leading-tight">
+              <h2 className="text-3xl md:text-6xl font-black text-foreground leading-tight">
                 Our Security Services
               </h2>
             </div>
-            <p className="text-sm md:text-xl font-bold text-gray-300 ml-6 md:ml-8 max-w-2xl leading-relaxed">
+            <p className="text-sm md:text-xl font-bold text-muted-foreground ml-6 md:ml-8 max-w-2xl leading-relaxed">
               Comprehensive solutions designed to protect what matters most to
               you
             </p>
@@ -82,27 +82,30 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {/* Static Guards - Large Featured Card */}
-            <div className="md:col-span-2 lg:col-span-1 bg-gradient-to-br from-slate-800 to-slate-700 text-white p-0 rounded-3xl overflow-hidden relative group hover:shadow-2xl transition-all duration-300">
+            <div
+              className="md:col-span-2 lg:col-span-1 bg-card text-foreground p-0 rounded-3xl overflow-hidden relative group hover:shadow-2xl transition-all duration-300 border border-border animate-slide-in-from-bottom"
+              style={{ animationDelay: "100ms" }}
+            >
               <div className="relative overflow-hidden h-64 md:h-80">
                 <img
                   src="https://images.pexels.com/photos/29656069/pexels-photo-29656069.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Professional security guards with tactical gear"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
               </div>
               <div className="relative z-10 p-8 md:p-10">
                 <Shield className="w-12 h-12 mb-4 text-accent" />
-                <h3 className="text-3xl font-black mb-4 leading-tight">
+                <h3 className="text-3xl font-black mb-4 leading-tight text-foreground">
                   Static Security Guards
                 </h3>
-                <p className="text-base md:text-lg font-bold opacity-90 mb-6 leading-relaxed">
+                <p className="text-base md:text-lg font-bold opacity-90 mb-6 leading-relaxed text-muted-foreground">
                   Vetted, trained professionals providing reliable, disciplined
                   on-site protection for your premises
                 </p>
                 <Link
                   to="/services"
-                  className="inline-block text-accent font-black text-lg hover:text-white transition-colors duration-300"
+                  className="inline-block text-accent font-black text-lg hover:text-primary transition-colors duration-300"
                 >
                   Learn More →
                 </Link>
@@ -110,7 +113,10 @@ export default function Home() {
             </div>
 
             {/* Bodyguards Card */}
-            <div className="bg-gradient-to-br from-blue-700 to-blue-600 text-white p-8 md:p-12 rounded-2xl md:rounded-3xl overflow-hidden relative group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div
+              className="bg-blue-600 text-white p-8 md:p-12 rounded-2xl md:rounded-3xl overflow-hidden relative group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 animate-slide-in-from-bottom"
+              style={{ animationDelay: "200ms" }}
+            >
               <div className="relative z-10">
                 <Users className="w-10 md:w-14 h-10 md:h-14 mb-6 md:mb-8 text-white" />
                 <h3 className="text-2xl md:text-3xl font-black mb-4 md:mb-6">
@@ -130,7 +136,10 @@ export default function Home() {
             </div>
 
             {/* Mobile Escorts Card */}
-            <div className="bg-gradient-to-br from-orange-700 to-orange-600 text-white p-8 md:p-12 rounded-2xl md:rounded-3xl overflow-hidden relative group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div
+              className="bg-orange-600 text-white p-8 md:p-12 rounded-2xl md:rounded-3xl overflow-hidden relative group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 animate-slide-in-from-bottom"
+              style={{ animationDelay: "300ms" }}
+            >
               <div className="relative z-10">
                 <Truck className="w-10 md:w-14 h-10 md:h-14 mb-6 md:mb-8 text-white" />
                 <h3 className="text-2xl md:text-3xl font-black mb-4 md:mb-6">
@@ -150,7 +159,10 @@ export default function Home() {
             </div>
 
             {/* Security Equipment Card */}
-            <div className="bg-gradient-to-br from-slate-700 to-slate-600 text-white p-8 md:p-12 rounded-2xl md:rounded-3xl overflow-hidden relative group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div
+              className="bg-slate-700 text-white p-8 md:p-12 rounded-2xl md:rounded-3xl overflow-hidden relative group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 animate-slide-in-from-bottom"
+              style={{ animationDelay: "400ms" }}
+            >
               <div className="relative z-10">
                 <Lock className="w-10 md:w-14 h-10 md:h-14 mb-6 md:mb-8 text-accent" />
                 <h3 className="text-2xl md:text-3xl font-black mb-4 md:mb-6">
@@ -172,9 +184,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value Proposition Section - With Background */}
-      <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden py-20 md:py-32">
-        <div className="absolute inset-0 opacity-5">
+      {/* Value Proposition Section */}
+      <section className="bg-card text-foreground relative overflow-hidden py-20 md:py-32 border-y border-border transition-colors duration-300">
+        <div className="absolute inset-0 opacity-3">
           <div
             className="absolute inset-0"
             style={{
@@ -185,18 +197,17 @@ export default function Home() {
             }}
           ></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/98 via-slate-900/98 to-slate-950/98"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center md:text-left">
-            <h2 className="text-3xl md:text-5xl font-black leading-tight mb-6 md:mb-8">
+            <h2 className="text-3xl md:text-5xl font-black leading-tight mb-6 md:mb-8 text-foreground">
               Why Professional Security Matters
             </h2>
-            <p className="text-base md:text-xl font-bold opacity-90 leading-relaxed mb-6">
+            <p className="text-base md:text-xl font-bold opacity-90 leading-relaxed mb-6 text-muted-foreground">
               In a world where security has become critical, a personalized
               approach is key to ensuring you get the protection you deserve.
             </p>
-            <p className="text-base md:text-lg font-bold opacity-80 leading-relaxed">
+            <p className="text-base md:text-lg font-bold opacity-80 leading-relaxed text-muted-foreground">
               From static guards and elite bodyguards to mobile escorts and
               advanced security equipment, we provide comprehensive, tailored
               solutions for every security need backed by decades of expertise.
@@ -206,10 +217,10 @@ export default function Home() {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-16 md:py-28 bg-gradient-to-b from-slate-800 to-slate-900">
+      <section className="py-16 md:py-28 bg-background transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-gradient-to-br from-accent to-yellow-500 text-accent-foreground p-8 md:p-12 rounded-xl md:rounded-2xl text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-accent text-accent-foreground p-8 md:p-12 rounded-xl md:rounded-2xl text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <p className="text-4xl md:text-6xl font-black mb-2 md:mb-3">
                 30+
               </p>
@@ -217,7 +228,7 @@ export default function Home() {
                 Years of Experience
               </p>
             </div>
-            <div className="bg-gradient-to-br from-blue-700 to-blue-600 text-white p-8 md:p-12 rounded-xl md:rounded-2xl text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-blue-600 text-white p-8 md:p-12 rounded-xl md:rounded-2xl text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <p className="text-4xl md:text-6xl font-black mb-2 md:mb-3">
                 500+
               </p>
@@ -225,7 +236,7 @@ export default function Home() {
                 Trained Personnel
               </p>
             </div>
-            <div className="bg-gradient-to-br from-slate-700 to-slate-600 text-white p-8 md:p-12 rounded-xl md:rounded-2xl text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-slate-700 text-white p-8 md:p-12 rounded-xl md:rounded-2xl text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <p className="text-4xl md:text-6xl font-black mb-2 md:mb-3">
                 100+
               </p>
@@ -238,17 +249,17 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us - Feature Grid */}
-      <section className="py-20 md:py-40 bg-gradient-to-b from-slate-900 to-slate-950">
+      <section className="py-20 md:py-40 bg-background transition-colors duration-300">
         <div className="container mx-auto px-6">
           {/* Section Title with Visual Styling */}
           <div className="mb-16 md:mb-20">
             <div className="flex items-start gap-3 md:gap-4 mb-6 md:mb-8">
               <div className="w-1.5 md:w-2 h-10 md:h-12 bg-accent rounded-full flex-shrink-0 mt-1"></div>
-              <h2 className="text-3xl md:text-6xl font-black text-white leading-tight">
+              <h2 className="text-3xl md:text-6xl font-black text-foreground leading-tight">
                 Why Choose Eagle
               </h2>
             </div>
-            <p className="text-sm md:text-xl font-bold text-gray-300 ml-6 md:ml-8 max-w-2xl leading-relaxed">
+            <p className="text-sm md:text-xl font-bold text-muted-foreground ml-6 md:ml-8 max-w-2xl leading-relaxed">
               Three decades of trusted security excellence
             </p>
           </div>
@@ -278,13 +289,14 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-slate-600 p-6 md:p-10 rounded-xl md:rounded-2xl hover:shadow-2xl hover:border-accent hover:-translate-y-2 transition-all duration-300"
+                className="bg-card border-2 border-border p-6 md:p-10 rounded-xl md:rounded-2xl hover:shadow-2xl hover:border-accent hover:-translate-y-2 transition-all duration-300 animate-slide-in-from-bottom"
+                style={{ animationDelay: `${i * 100}ms` }}
               >
                 <item.icon className="w-10 md:w-12 h-10 md:h-12 text-accent mb-4 md:mb-6 transition-transform duration-300" />
-                <h3 className="text-lg md:text-2xl font-black text-white mb-3 md:mb-4 leading-tight">
+                <h3 className="text-lg md:text-2xl font-black text-foreground mb-3 md:mb-4 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-sm md:text-lg font-bold text-gray-300 leading-relaxed">
+                <p className="text-sm md:text-lg font-bold text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -294,57 +306,57 @@ export default function Home() {
       </section>
 
       {/* Presence Section */}
-      <section className="py-20 md:py-48 bg-gradient-to-b from-slate-900 to-slate-850">
+      <section className="py-20 md:py-48 bg-background transition-colors duration-300">
         <div className="container mx-auto px-6">
           {/* Section Title with Visual Styling */}
           <div className="mb-16 md:mb-24">
             <div className="flex items-start gap-3 md:gap-4 mb-6 md:mb-8">
               <div className="w-1.5 md:w-2 h-10 md:h-12 bg-accent rounded-full flex-shrink-0 mt-1"></div>
-              <h2 className="text-3xl md:text-6xl font-black text-white leading-tight">
+              <h2 className="text-3xl md:text-6xl font-black text-foreground leading-tight">
                 National Presence
               </h2>
             </div>
-            <p className="text-sm md:text-xl font-bold text-gray-300 ml-6 md:ml-8 max-w-2xl leading-relaxed">
+            <p className="text-sm md:text-xl font-bold text-muted-foreground ml-6 md:ml-8 max-w-2xl leading-relaxed">
               Offices across Pakistan ensuring reliable coverage and local
               expertise
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-accent p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl hover:border-yellow-300 transition-all duration-300">
+            <div className="bg-card border-2 border-accent p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl hover:border-yellow-300 transition-all duration-300">
               <p className="text-accent font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
                 Head Office
               </p>
-              <h3 className="text-3xl md:text-4xl font-black text-white mb-3 md:mb-4">
+              <h3 className="text-3xl md:text-4xl font-black text-foreground mb-3 md:mb-4">
                 Islamabad
               </h3>
-              <p className="text-base md:text-lg font-bold text-gray-300 leading-relaxed">
+              <p className="text-base md:text-lg font-bold text-muted-foreground leading-relaxed">
                 Central coordination and management hub
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-blue-500 p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl transition-all duration-300">
-              <p className="text-blue-400 font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
+            <div className="bg-card border-2 border-blue-500 p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl transition-all duration-300">
+              <p className="text-blue-600 font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
                 Regional Offices
               </p>
-              <h3 className="text-3xl md:text-4xl font-black text-white mb-4 md:mb-6">
+              <h3 className="text-3xl md:text-4xl font-black text-foreground mb-4 md:mb-6">
                 5+
               </h3>
-              <div className="text-sm md:text-base font-bold text-gray-300 space-y-2 md:space-y-3 leading-relaxed">
+              <div className="text-sm md:text-base font-bold text-muted-foreground space-y-2 md:space-y-3 leading-relaxed">
                 <p>• Lahore • Karachi</p>
                 <p>• Multan • Peshawar</p>
                 <p>• Jhelum • Gujranwala</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-slate-600 p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl hover:border-blue-500 transition-all duration-300">
-              <p className="text-slate-400 font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
+            <div className="bg-card border-2 border-border p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl hover:border-blue-500 transition-all duration-300">
+              <p className="text-muted-foreground font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
                 National Coverage
               </p>
-              <h3 className="text-3xl md:text-4xl font-black text-white mb-4 md:mb-6">
+              <h3 className="text-3xl md:text-4xl font-black text-foreground mb-4 md:mb-6">
                 Nationwide
               </h3>
-              <div className="text-sm md:text-base font-bold text-gray-300 space-y-2 md:space-y-3 leading-relaxed">
+              <div className="text-sm md:text-base font-bold text-muted-foreground space-y-2 md:space-y-3 leading-relaxed">
                 <p>Including AJK</p>
                 <p>Sub-offices in major cities</p>
                 <p>24/7 availability everywhere</p>
@@ -355,9 +367,9 @@ export default function Home() {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-16 md:py-32 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950">
+      <section className="py-16 md:py-32 bg-background transition-colors duration-300 border-y border-border">
         <div className="container mx-auto px-6">
-          <h3 className="text-2xl md:text-4xl font-black mb-10 md:mb-12 leading-tight text-white">
+          <h3 className="text-2xl md:text-4xl font-black mb-10 md:mb-12 leading-tight text-foreground">
             Trusted by Leading Organizations
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
@@ -375,9 +387,9 @@ export default function Home() {
             ].map((client) => (
               <div
                 key={client}
-                className="aspect-square border-2 border-slate-700 p-4 md:p-6 flex items-center justify-center text-center hover:bg-accent hover:text-slate-950 hover:shadow-xl hover:border-accent transition-all duration-300 cursor-pointer rounded bg-slate-800"
+                className="aspect-square border-2 border-border p-4 md:p-6 flex items-center justify-center text-center hover:bg-accent hover:text-accent-foreground hover:shadow-xl hover:border-accent transition-all duration-300 cursor-pointer rounded bg-card"
               >
-                <p className="font-black text-xs md:text-base leading-tight text-white">
+                <p className="font-black text-xs md:text-base leading-tight text-foreground">
                   {client}
                 </p>
               </div>
@@ -387,13 +399,13 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-48 bg-gradient-to-b from-slate-850 to-slate-950">
+      <section className="py-20 md:py-48 bg-background transition-colors duration-300">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-7xl font-black text-white mb-8 md:mb-10 leading-tight">
+          <h2 className="text-3xl md:text-7xl font-black text-foreground mb-8 md:mb-10 leading-tight">
             Ready to Protect <br className="hidden md:block" />
             What Matters?
           </h2>
-          <p className="text-base md:text-2xl font-bold text-gray-300 mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-2xl font-bold text-muted-foreground mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed">
             Contact our security experts today for a personalized consultation
             and secure your peace of mind
           </p>
@@ -415,22 +427,22 @@ export default function Home() {
       </section>
 
       {/* Location Section with Google Maps */}
-      <section className="py-20 md:py-48 bg-gradient-to-b from-slate-900 to-slate-950">
+      <section className="py-20 md:py-48 bg-background transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="mb-16 md:mb-24">
             <div className="flex items-start gap-3 md:gap-4 mb-6 md:mb-8">
               <div className="w-1.5 md:w-2 h-10 md:h-12 bg-accent rounded-full flex-shrink-0 mt-1"></div>
-              <h2 className="text-3xl md:text-6xl font-black text-white leading-tight">
+              <h2 className="text-3xl md:text-6xl font-black text-foreground leading-tight">
                 Our Head Office Location
               </h2>
             </div>
-            <p className="text-sm md:text-xl font-bold text-gray-300 ml-6 md:ml-8 max-w-2xl leading-relaxed">
+            <p className="text-sm md:text-xl font-bold text-muted-foreground ml-6 md:ml-8 max-w-2xl leading-relaxed">
               Visit us at our Islamabad headquarters for consultations and
               inquiries
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden shadow-2xl hover:shadow-2xl transition-all duration-300 border-2 border-slate-700">
+          <div className="rounded-3xl overflow-hidden shadow-2xl hover:shadow-2xl transition-all duration-300 border-2 border-border">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13282.195486583572!2d72.99590472612844!3d33.66884932093898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95ff25ed8b53%3A0x7e482ec7e99bebe0!2sG-11%2C%20Islamabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1766783293705!5m2!1sen!2s"
               width="100%"
@@ -444,117 +456,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-950 text-white py-24 md:py-32">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 mb-16">
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <img
-                  src="https://i.ibb.co/s954vR34/eaglesecurityoriginallogo-1-copy.png"
-                  alt="Eagle Security Guards Logo"
-                  className="h-14 w-14"
-                />
-                <h4 className="font-black text-2xl">Eagle Security</h4>
-              </div>
-              <p className="text-base font-bold opacity-75 leading-relaxed">
-                Professional security services since 1992, protecting businesses
-                and individuals across Pakistan.
-              </p>
-            </div>
-            <div>
-              <h5 className="font-black text-lg mb-8 uppercase tracking-wider">
-                Services
-              </h5>
-              <ul className="space-y-4 text-base font-bold opacity-75">
-                <li>
-                  <Link
-                    to="/services"
-                    className="hover:text-accent transition-colors duration-300"
-                  >
-                    Static Guards
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    className="hover:text-accent transition-colors duration-300"
-                  >
-                    Bodyguards
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    className="hover:text-accent transition-colors duration-300"
-                  >
-                    Mobile Escorts
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    className="hover:text-accent transition-colors duration-300"
-                  >
-                    Equipment
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-black text-lg mb-8 uppercase tracking-wider">
-                Company
-              </h5>
-              <ul className="space-y-4 text-base font-bold opacity-75">
-                <li>
-                  <Link
-                    to="/about"
-                    className="hover:text-accent transition-colors duration-300"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/why-choose-us"
-                    className="hover:text-accent transition-colors duration-300"
-                  >
-                    Why Choose Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="hover:text-accent transition-colors duration-300"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-black text-lg mb-8 uppercase tracking-wider">
-                Contact
-              </h5>
-              <p className="text-base font-bold opacity-75 mb-3">
-                Islamabad, Pakistan
-              </p>
-              <p className="text-base font-bold opacity-75 mb-8">
-                Available 24/7
-              </p>
-              <p className="text-base font-black text-accent">
-                security@eagleguards.pk
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-slate-800 pt-8">
-            <p className="text-center text-base font-bold opacity-60">
-              © 2024 Eagle Security Guards. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

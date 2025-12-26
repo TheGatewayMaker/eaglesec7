@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navigationLinks = [
     { to: "/", label: "HOME" },
@@ -12,7 +15,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-b-2 border-accent sticky top-0 z-50 shadow-lg">
+    <nav className="bg-background border-b-2 border-accent sticky top-0 z-50 shadow-lg transition-colors duration-300">
       <div className="container mx-auto px-6 py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Company Name */}
@@ -26,7 +29,7 @@ export default function Navigation() {
               className="h-12 w-12 md:h-16 md:w-16"
             />
             <div className="flex flex-col gap-1">
-              <span className="text-xl md:text-2xl font-black text-white">
+              <span className="text-xl md:text-2xl font-black text-foreground">
                 Eagle
               </span>
               <span className="text-xs font-black tracking-widest text-accent">
@@ -41,7 +44,7 @@ export default function Navigation() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-black text-sm text-white hover:text-accent transition-colors duration-300 relative group"
+                className="font-black text-sm text-foreground hover:text-accent transition-colors duration-300 relative group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
@@ -49,30 +52,51 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Professional Mobile Menu Button - Hamburger */}
-          <div className="md:hidden">
+          {/* Theme Toggle and Mobile Menu */}
+          <div className="flex items-center gap-4">
+            {/* Theme Toggle Button */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-80 transition-opacity duration-300 focus:outline-none"
-              aria-label="Toggle mobile menu"
-              aria-expanded={mobileMenuOpen}
+              onClick={toggleTheme}
+              className="p-2 rounded-lg hover:bg-accent/10 transition-all duration-300 flex items-center justify-center"
+              aria-label="Toggle dark mode"
+              title={
+                theme === "light"
+                  ? "Switch to Dark Mode"
+                  : "Switch to Light Mode"
+              }
             >
-              <span
-                className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-out origin-center ${
-                  mobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-              ></span>
-              <span
-                className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-out ${
-                  mobileMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              ></span>
-              <span
-                className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-out origin-center ${
-                  mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              ></span>
+              {theme === "light" ? (
+                <Moon className="w-5 h-5 md:w-6 md:h-6 text-foreground transition-transform duration-300" />
+              ) : (
+                <Sun className="w-5 h-5 md:w-6 md:h-6 text-foreground transition-transform duration-300" />
+              )}
             </button>
+
+            {/* Professional Mobile Menu Button - Hamburger */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="flex flex-col gap-1.5 w-8 h-8 items-center justify-center hover:opacity-80 transition-opacity duration-300 focus:outline-none"
+                aria-label="Toggle mobile menu"
+                aria-expanded={mobileMenuOpen}
+              >
+                <span
+                  className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ease-out origin-center ${
+                    mobileMenuOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ease-out ${
+                    mobileMenuOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                ></span>
+                <span
+                  className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ease-out origin-center ${
+                    mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+                ></span>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -84,7 +108,7 @@ export default function Navigation() {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-3 px-5 font-black text-sm text-white hover:text-accent bg-gradient-to-r hover:from-slate-800 hover:to-slate-700 transition-all duration-300 rounded-lg mb-2 border-l-4 border-transparent hover:border-accent"
+                className="block py-3 px-5 font-black text-sm text-foreground hover:text-accent bg-muted/40 hover:bg-muted/70 transition-all duration-300 rounded-lg mb-2 border-l-4 border-transparent hover:border-accent"
                 style={{
                   animationDelay: `${index * 50}ms`,
                 }}
