@@ -3,14 +3,14 @@ import { Target, Lightbulb, Compass } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="bg-background">
+    <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-16 md:py-24">
+      <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6">
-          <h1 className="text-h1 font-bold mb-6">
+          <h1 className="text-5xl md:text-6xl font-black mb-6">
             About Eagle Security Guards
           </h1>
-          <p className="text-xl opacity-95 max-w-2xl">
+          <p className="text-xl opacity-90 max-w-2xl font-bold leading-relaxed">
             Building trust through excellence in professional security services
             since 1992
           </p>
@@ -18,7 +18,7 @@ export default function About() {
       </section>
 
       {/* Background Section */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-28 bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto px-6 max-w-3xl">
           <div className="mb-16">
             <h2 className="text-h2 font-bold text-primary mb-6">
