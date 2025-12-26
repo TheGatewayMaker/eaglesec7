@@ -293,57 +293,57 @@ export default function Home() {
       </section>
 
       {/* Presence Section */}
-      <section className="py-20 md:py-48 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-20 md:py-48 bg-gradient-to-b from-slate-900 to-slate-850">
         <div className="container mx-auto px-6">
           {/* Section Title with Visual Styling */}
           <div className="mb-16 md:mb-24">
             <div className="flex items-start gap-3 md:gap-4 mb-6 md:mb-8">
               <div className="w-1.5 md:w-2 h-10 md:h-12 bg-accent rounded-full flex-shrink-0 mt-1"></div>
-              <h2 className="text-3xl md:text-6xl font-black text-primary leading-tight">
+              <h2 className="text-3xl md:text-6xl font-black text-white leading-tight">
                 National Presence
               </h2>
             </div>
-            <p className="text-sm md:text-xl font-bold text-slate-700 ml-6 md:ml-8 max-w-2xl leading-relaxed">
+            <p className="text-sm md:text-xl font-bold text-gray-300 ml-6 md:ml-8 max-w-2xl leading-relaxed">
               Offices across Pakistan ensuring reliable coverage and local
               expertise
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white border-2 border-accent p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl hover:border-accent transition-all duration-300">
+            <div className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-accent p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl hover:border-yellow-300 transition-all duration-300">
               <p className="text-accent font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
                 Head Office
               </p>
-              <h3 className="text-3xl md:text-4xl font-black text-primary mb-3 md:mb-4">
+              <h3 className="text-3xl md:text-4xl font-black text-white mb-3 md:mb-4">
                 Islamabad
               </h3>
-              <p className="text-base md:text-lg font-bold text-slate-700 leading-relaxed">
+              <p className="text-base md:text-lg font-bold text-gray-300 leading-relaxed">
                 Central coordination and management hub
               </p>
             </div>
 
-            <div className="bg-white border-2 border-primary p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl transition-all duration-300">
-              <p className="text-primary font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
+            <div className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-blue-500 p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl transition-all duration-300">
+              <p className="text-blue-400 font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
                 Regional Offices
               </p>
-              <h3 className="text-3xl md:text-4xl font-black text-primary mb-4 md:mb-6">
+              <h3 className="text-3xl md:text-4xl font-black text-white mb-4 md:mb-6">
                 5+
               </h3>
-              <div className="text-sm md:text-base font-bold text-slate-700 space-y-2 md:space-y-3 leading-relaxed">
+              <div className="text-sm md:text-base font-bold text-gray-300 space-y-2 md:space-y-3 leading-relaxed">
                 <p>• Lahore • Karachi</p>
                 <p>• Multan • Peshawar</p>
                 <p>• Jhelum • Gujranwala</p>
               </div>
             </div>
 
-            <div className="bg-white border-2 border-slate-300 p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl hover:border-primary transition-all duration-300">
-              <p className="text-slate-600 font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
+            <div className="bg-gradient-to-br from-slate-800 to-slate-700 border-2 border-slate-600 p-8 md:p-12 rounded-xl md:rounded-3xl hover:shadow-2xl hover:border-blue-500 transition-all duration-300">
+              <p className="text-slate-400 font-black text-xs uppercase tracking-widest mb-3 md:mb-4">
                 National Coverage
               </p>
-              <h3 className="text-3xl md:text-4xl font-black text-primary mb-4 md:mb-6">
+              <h3 className="text-3xl md:text-4xl font-black text-white mb-4 md:mb-6">
                 Nationwide
               </h3>
-              <div className="text-sm md:text-base font-bold text-slate-700 space-y-2 md:space-y-3 leading-relaxed">
+              <div className="text-sm md:text-base font-bold text-gray-300 space-y-2 md:space-y-3 leading-relaxed">
                 <p>Including AJK</p>
                 <p>Sub-offices in major cities</p>
                 <p>24/7 availability everywhere</p>
@@ -354,9 +354,9 @@ export default function Home() {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-16 md:py-32 bg-primary text-primary-foreground">
+      <section className="py-16 md:py-32 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950">
         <div className="container mx-auto px-6">
-          <h3 className="text-2xl md:text-4xl font-black mb-10 md:mb-12 leading-tight">
+          <h3 className="text-2xl md:text-4xl font-black mb-10 md:mb-12 leading-tight text-white">
             Trusted by Leading Organizations
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
@@ -374,9 +374,9 @@ export default function Home() {
             ].map((client) => (
               <div
                 key={client}
-                className="aspect-square border-2 border-primary-foreground p-4 md:p-6 flex items-center justify-center text-center hover:bg-primary-foreground hover:text-primary hover:shadow-xl transition-all duration-300 cursor-pointer rounded"
+                className="aspect-square border-2 border-slate-700 p-4 md:p-6 flex items-center justify-center text-center hover:bg-accent hover:text-slate-950 hover:shadow-xl hover:border-accent transition-all duration-300 cursor-pointer rounded bg-slate-800"
               >
-                <p className="font-black text-xs md:text-base leading-tight">
+                <p className="font-black text-xs md:text-base leading-tight text-white">
                   {client}
                 </p>
               </div>
